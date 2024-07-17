@@ -12,9 +12,10 @@ public class CommonFunction
     public static void Login()
     {
         Console.WriteLine("enter the Login id");
-        
+
         string? id = Console.ReadLine();
         Console.WriteLine("enter the password");
+        
         string? password = Console.ReadLine();
         Login login = new Login(id, password);
         var dataBase = GetConnection();
