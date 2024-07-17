@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dotnet\\bugtrackerapi\\bugtrackerapi.csproj": {}
+    "C:\\sample\\sample\\bugtrackerapi.csproj": {}
   },
   "projects": {
-    "C:\\dotnet\\bugtrackerapi\\bugtrackerapi.csproj": {
+    "C:\\sample\\sample\\bugtrackerapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dotnet\\bugtrackerapi\\bugtrackerapi.csproj",
+        "projectUniqueName": "C:\\sample\\sample\\bugtrackerapi.csproj",
         "projectName": "bugtrackerapi",
-        "projectPath": "C:\\dotnet\\bugtrackerapi\\bugtrackerapi.csproj",
+        "projectPath": "C:\\sample\\sample\\bugtrackerapi.csproj",
         "packagesPath": "C:\\Users\\AkhilBiju\\.nuget\\packages\\",
-        "outputPath": "C:\\dotnet\\bugtrackerapi\\obj\\",
+        "outputPath": "C:\\sample\\sample\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AkhilBiju\\AppData\\Roaming\\NuGet\\NuGet.Config"

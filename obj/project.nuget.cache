@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n8Pkdf8qA/3DvHU/MydO2xNU5jbJkGf52Br8KcEGIunJQwowmBBsr6PuHtZVKPRFW4Ddy1chCBnf5QsbnWhzrg==",
+  "dgSpecHash": "ud3wW1oMxPa+5ZwgpPaWNyz1HNUxdt7WaxG30GQbld/buNoA/CUOG6uXE/l59gQTvaQAhnw6IeZHxj82YvrDrw==",
   "success": true,
-  "projectFilePath": "C:\\dotnet\\bugtrackerapi\\bugtrackerapi.csproj",
+  "projectFilePath": "C:\\sample\\sample\\bugtrackerapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AkhilBiju\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\AkhilBiju\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
