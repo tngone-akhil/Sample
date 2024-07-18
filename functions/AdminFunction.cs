@@ -15,7 +15,7 @@ public class AdminFunctions
 
         while (true)
         {
-            Console.WriteLine("press 1 to Create user\npress 2 to create Project\npress 3 to get projectstatus\npress 4 to lock user");
+            Console.WriteLine("press 1 to Create user\npress 2 to create Project\npress 3 to get projectstatus\npress 4 to lock users");
             Console.WriteLine("press 5 to edit profile\npress 6 to getuserReport\npress 7 to get add new employee to the project\npress 8 to logout");
             string? choice = Console.ReadLine();
             switch (choice)
