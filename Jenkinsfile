@@ -16,12 +16,12 @@ node {
         }
 
         // Stage: Run SonarScanner
-        stage('Run SonarScanner') {
-            // Execute SonarScanner
-            withSonarQubeEnv('SonarQubeServer') {
-                bat "${scannerHome}/bin/sonar-scanner"
-            }
-        }
+        // stage('Run SonarScanner') {
+        //     // Execute SonarScanner
+        //     withSonarQubeEnv('SonarQubeServer') {
+        //         bat "${scannerHome}/bin/sonar-scanner"
+        //     }
+        // }
     } finally {
         // Clean up workspace
         deleteDir()
