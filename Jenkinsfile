@@ -12,7 +12,7 @@ node {
         // Stage: Build
         stage('Build') {
             // Build the .NET project
-            bat 'dotnet build MyProject.sln /p:Configuration=Release'
+            bat 'dotnet build bugtrackerapi /p:Configuration=Release'
         }
 
         // Stage: Run SonarScanner
