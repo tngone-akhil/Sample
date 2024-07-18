@@ -1,6 +1,6 @@
 node {
     // Define the .NET SDK tool
-    def dotnetTool = tool name: 'dotnet', type: 'hudson.plugins.dotnet.NETSDKinstallations'
+    def dotnetTool = tool name: 'dotnet', type:  'hudson.plugins.dotnet.DotNetToolInstallation'
 
     stage('Checkout') {
         // Checkout your Git repository
