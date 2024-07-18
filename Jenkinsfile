@@ -1,46 +1,28 @@
 node {
-    // Define the .NET SDK tool
-    def dotnetTool = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    // Define SonarScanner tool installation
+    def scannerHome = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    
+    try {
+        // Stage: Checkout
+        stage('Checkout') {
+            // Checkout your Git repository
+            checkout scm
+        }
 
-    stage('Checkout') {
-        // Checkout your Git repository
-        checkout scm
-    }
+        // Stage: Build
+        stage('Build') {
+            // Build the .NET project
+            bat 'dotnet build MyProject.sln /p:Configuration=Release'
+        }
 
-    stage('Restore') {
-        // Restore NuGet packages and project dependencies
-        echo "${dotnetTool}"
-        bat "${dotnetTool}/dotnet restore"
-    }
-
-    stage('Build') {
-        // Build the .NET project
-        bat "${dotnetTool}/dotnet build --configuration Release"
-        
-        // Archive the build artifacts (if needed)
-        // Adjust the path based on your project structure
-        // archiveArtifacts artifacts: 'bin/Release/**', allowEmptyArchive: true
-    }
-
-    stage('Test') {
-        // Run tests if applicable
-        bat "${dotnetTool}/dotnet test --no-restore"
-    }
-
-    stage('Publish') {
-        // Publish the .NET application (if it's a web application, for example)
-        bat "${dotnetTool}/dotnet publish --configuration Release --output publish_output"
-        
-        // Archive the published artifacts (if needed)
-        // archiveArtifacts artifacts: 'publish_output/**', allowEmptyArchive: true
-    }
-
-    // stage('Deploy') {
-    //     // Example deployment stage, adjust as per your deployment process
-    //     bat 'xcopy /s publish_output\\*.* \\\\server\\path\\to\\deploy\\folder'
-    // }
-
-    stage('Cleanup') {
+        // Stage: Run SonarScanner
+        stage('Run SonarScanner') {
+            // Execute SonarScanner
+            withSonarQubeEnv('SonarQubeServer') {
+                bat "${scannerHome}/bin/sonar-scanner"
+            }
+        }
+    } finally {
         // Clean up workspace
         deleteDir()
     }
