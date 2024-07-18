@@ -1,6 +1,6 @@
 node {
     // Define the .NET SDK tool
-    def dotnetTool = tool name: 'dotnet', type: 'hudson.plugins.dotnet.DotNetToolInstallation'
+    def dotnetTool = tool name: 'dotnet', type: 'hudson.plugins.dotnet.NETSDKinstallations'
 
     stage('Checkout') {
         // Checkout your Git repository
@@ -9,6 +9,7 @@ node {
 
     stage('Restore') {
         // Restore NuGet packages and project dependencies
+        echo "${dotnetTool}"
         bat "${dotnetTool}/dotnet restore"
     }
 
