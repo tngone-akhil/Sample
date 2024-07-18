@@ -1,6 +1,6 @@
 node {
     // Define the .NET SDK tool
-    def dotnetTool = tool name: 'dotnet', type:  'hudson.plugins.dotnet.DotNetToolInstallation'
+    def dotnetTool = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
 
     stage('Checkout') {
         // Checkout your Git repository
