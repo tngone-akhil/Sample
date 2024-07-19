@@ -786,11 +786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\sample\\sample\\bugtrackerapi.csproj",
+      "projectUniqueName": "C:\\sample\\.net\\sample\\bugtrackerapi.csproj",
       "projectName": "bugtrackerapi",
-      "projectPath": "C:\\sample\\sample\\bugtrackerapi.csproj",
+      "projectPath": "C:\\sample\\.net\\sample\\bugtrackerapi.csproj",
       "packagesPath": "C:\\Users\\AkhilBiju\\.nuget\\packages\\",
-      "outputPath": "C:\\sample\\sample\\obj\\",
+      "outputPath": "C:\\sample\\.net\\sample\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AkhilBiju\\AppData\\Roaming\\NuGet\\NuGet.Config"
