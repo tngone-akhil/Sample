@@ -16,13 +16,13 @@ node {
               archiveArtifacts artifacts: '**/bin/**/*.dll', allowEmptyArchive: true
         }
 
-        // Stage: Run SonarScanner
-        // stage('Run SonarScanner') {
-        //     // Execute SonarScanner
-        //     withSonarQubeEnv('SonarQubeServer') {
-        //         bat "${scannerHome}/bin/sonar-scanner"
-        //     }
-        // }
+        Stage: Run SonarScanner
+        stage('Run SonarScanner') {
+            // Execute SonarScanner
+            withSonarQubeEnv('SonarQubeServer') {
+                bat "${scannerHome}/bin/sonar-scanner"
+            }
+        }
     } finally {
         // Clean up workspace
         deleteDir()
