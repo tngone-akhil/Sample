@@ -34,7 +34,7 @@ pipeline {
                     if(!buildFilesDir)  bat "mkdir \"${buildFilesDir}\""
                     
                     // Move .dll files to build-files directory
-                 bat "move /Y "${workspacePath}\bin\**\*.dll" "${buildFilesDir}"
+                  bat "move /Y \"${workspacePath}\\bin\\**\\*.dll\" \"${buildFilesDir}\""
 "
 
 
