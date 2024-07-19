@@ -16,6 +16,7 @@ node {
               archiveArtifacts artifacts: '**/bin/**/*.dll', allowEmptyArchive: true
         }
 
+
         Stage: Run SonarScanner
         stage('Run SonarScanner') {
             // Execute SonarScanner
