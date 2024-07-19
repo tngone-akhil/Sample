@@ -20,7 +20,7 @@ node {
         Stage: Run SonarScanner
         stage('Run SonarScanner') {
             // Execute SonarScanner
-            withSonarQubeEnv('SonarQubeServer') {
+            withSonarQubeEnv('SonarScanner') {
                 bat "${scannerHome}/bin/sonar-scanner"
             }
         }
