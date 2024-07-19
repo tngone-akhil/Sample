@@ -1,5 +1,6 @@
 node {
     // Define SonarScanner tool installation
+    
     def scannerHome = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     
     try {
@@ -7,6 +8,8 @@ node {
         stage('Checkout') {
             // Checkout your Git repository
             checkout scm
+            echo "${scannerHome}"
+            echo "hii"
         }
 
         // Stage: Build
