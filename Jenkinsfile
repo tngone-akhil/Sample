@@ -31,10 +31,10 @@ pipeline {
                     def buildFilesDir = "${workspacePath}\\build-files" // Use double backslashes for Windows paths
                 
                     // Create directory if it doesn't exist
-                    bat "mkdir \"${buildFilesDir}\""
+                    if(!buildFilesDir)  bat "mkdir \"${buildFilesDir}\""
                     
                     // Move .dll files to build-files directory
-                 bat "move /Y \"${workspacePath}\\**\\Release\\*.dll\" \"${buildFilesDir}\""
+                 bat "move /Y \"${workspacePath}\bin\Release\net8.0\*.dll" \"${buildFilesDir}\""
 
 
                     
