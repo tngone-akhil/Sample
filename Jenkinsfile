@@ -33,7 +33,7 @@ pipeline {
                     bat "mkdir \"${buildFilesDir}\""
                     
                     // Move .dll files to build-files directory
-                  bat "move /Y \"${workspacePath}\\**\\bin\\release\\*.dll\" \"${buildFilesDir}\""
+                  bat "move /Y \"${workspacePath}\bin\\Release\net8.0\*.dll\" \"${buildFilesDir}\""
 
                     
                     // Display paths of saved files
