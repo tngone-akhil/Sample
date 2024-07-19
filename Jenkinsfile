@@ -19,7 +19,7 @@ pipeline {
             }
         }
     }
-    
+
 
     post {
         always {
@@ -33,7 +33,8 @@ pipeline {
                     bat "mkdir \"${buildFilesDir}\""
                     
                     // Move .dll files to build-files directory
-                    bat "move /Y \"${workspacePath}\\**\\*.dll\" \"${buildFilesDir}\""
+                  bat "move /Y \"${workspacePath}\\**\\bin\\release\\*.dll\" \"${buildFilesDir}\""
+
                     
                     // Display paths of saved files
                     echo "Build files saved in directory: ${buildFilesDir}"
