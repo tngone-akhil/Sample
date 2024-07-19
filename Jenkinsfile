@@ -24,19 +24,26 @@ pipeline {
         always {
             // Save build files to a directory and display paths
             script {
-                def workspacePath = env.WORKSPACE
-                def buildFilesDir = "${workspacePath}\\build-files" // Use double backslashes for Windows paths
+                try {
+                    def workspacePath = env.WORKSPACE
+                    def buildFilesDir = "${workspacePath}\\build-files" // Use double backslashes for Windows paths
                 
-                // Create directory if it doesn't exist
-                bat "mkdir \"${buildFilesDir}\""
-                
-                // Move .dll files to build-files directory
-                bat "move /Y \"${workspacePath}\\**\\*.dll\" \"${buildFilesDir}\""
-                
-                // Display paths of saved files
-                echo "Build files saved in directory: ${buildFilesDir}"
-                echo "Files saved:"
-                bat "dir \"${buildFilesDir}\""
+                    // Create directory if it doesn't exist
+                    bat "mkdir \"${buildFilesDir}\""
+                    
+                    // Move .dll files to build-files directory
+                    bat "move /Y \"${workspacePath}\\**\\*.dll\" \"${buildFilesDir}\""
+                    
+                    // Display paths of saved files
+                    echo "Build files saved in directory: ${buildFilesDir}"
+                    echo "Files saved:"
+                    bat "dir \"${buildFilesDir}\""
+                } catch (Exception e) {
+                    // Catch any exception and print error message
+                    echo "Error in post-build actions: ${e.message}"
+                    currentBuild.result = 'FAILURE' // Mark build as failure
+                    throw e // Throw the exception to terminate the script
+                }
             }
         }
     }
