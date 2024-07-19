@@ -33,7 +33,6 @@ pipeline {
                     if (!new File(buildFilesDir).exists()) {
                         bat "mkdir \"${buildFilesDir}\""
                     }
-                    
 
                     // Move .dll files to build-files directory
                   bat "move /Y \"${workspacePath}\\bin\\Release\\net8.0\\*\" \"${buildFilesDir}\""
