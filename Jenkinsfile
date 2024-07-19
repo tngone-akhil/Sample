@@ -13,6 +13,7 @@ node {
         stage('Build') {
             // Build the .NET project
             bat 'dotnet build bugtrackerapi.sln /p:Configuration=Release'
+              archiveArtifacts artifacts: '**/bin/**/*.dll', allowEmptyArchive: true
         }
 
         // Stage: Run SonarScanner
