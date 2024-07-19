@@ -39,7 +39,6 @@ pipeline {
                   bat "xcopy /Y \"${workspacePath}\\bin\\Release\\net8.0\\*\" \"${buildFilesDir}\"/E"
 
 
-
                     
                     // Display paths of saved files
                     echo "Build files saved in directory: ${buildFilesDir}"
